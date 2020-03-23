@@ -28,6 +28,9 @@ class MyApp extends StatelessWidget {
                 fontSize: 25,
                 fontWeight: FontWeight.w300,
               ),
+              subtitle: TextStyle(
+                color: Colors.white,
+              ),
             ),
       ),
       initialRoute: '/',
@@ -35,6 +38,9 @@ class MyApp extends StatelessWidget {
         '/': (ctx) => CategoriesScreen(),
         CategoryMealsScreen.routeName: (ctx) => CategoryMealsScreen(),
         MealDetailScreen.routeName: (ctx) => MealDetailScreen(),
+      },
+      onUnknownRoute: (settings) {
+        return MaterialPageRoute(builder: (ctx) => CategoriesScreen());
       },
     );
   }
